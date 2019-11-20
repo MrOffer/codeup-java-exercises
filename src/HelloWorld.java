@@ -2,16 +2,16 @@
 
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.print("Hello, World!");
+        System.out.println("Hello, World!");
 
         int myFavoriteNumber = 1111;
-        System.out.print(myFavoriteNumber);
+        System.out.println(myFavoriteNumber);
 
         String myString = "Yay!";
-        System.out.print(myString);
+        System.out.println(myString);
 
         double myNumber = 3.14;
-        System.out.print(myNumber);
+        System.out.println(myNumber);
 
         int x = 5;
         System.out.println(x++);
@@ -32,7 +32,11 @@ public class HelloWorld {
         int d = 2;
          c /= d;
         d -= c;
-
+        System.out.println(z);
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
 
 }
 }

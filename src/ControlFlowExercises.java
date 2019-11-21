@@ -4,12 +4,44 @@ public class ControlFlowExercises {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("What number would you like to go up to?");
+        System.out.println("What grade would you like to input?");
         int num = scanner.nextInt();
+        char letterGrade = 'X';
 
-        System.out.print("Here is your table!\n\nnumber | squared | cubed\n------ | ------- | -----\n1      | 1       | 1\n");
-        for (int b = 2; b <= num; b++ ) {
-            System.out.print(b+"      | "+b*b+"       | "+b*b*b+"\n");
+        if (num > 100) {}
+        else if (num >= 90)
+            letterGrade = 'A';
+        else if (num >= 80)
+            letterGrade = 'B';
+        else if (num >= 70)
+            letterGrade = 'C';
+        else if (num >= 60)
+            letterGrade = 'D';
+        else if (num >= 0)
+            letterGrade = 'F';
+
+
+
+        switch (letterGrade) {
+            case 'A' :
+                System.out.println("You got an A!");
+                break;
+            case 'B' :
+                System.out.println("You got a B");
+                break;
+            case 'C' :
+                System.out.println("You got a C");
+                break;
+            case 'D' :
+                System.out.println("You got a D");
+                break;
+            case 'F' :
+                System.out.println("You got a F");
+                break;
+            default:
+                System.out.println("You cheater. Caught you red-handed.");
         }
+
     }
+
 }

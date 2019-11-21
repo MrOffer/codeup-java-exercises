@@ -2,12 +2,12 @@ import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
-        int a = 100;
+        Long a = 2L;
 
             do {
                 System.out.print(a + "\n");
-                a -= 5;
-            }while (a >= -10);
+                a *= a;
+            }while (a <= 100000);
 
         }
 

@@ -1,19 +1,15 @@
 import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        int i = 5;
-        while (i <= 15) {
-            System.out.print(i + " ");
-            i++;
-        }
-//            do {
-//                int a = 0;
-//                System.out.print(a +"/n");
-//                a++;
-//
-//            }while (a < 100);
-//
-//        }
+
+        int a = 0;
+
+            do {
+                System.out.print(a + "\n");
+                a+=2;
+            }while (a <= 100);
 
         }
-}
+
+        }
+

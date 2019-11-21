@@ -39,7 +39,7 @@ public class ControlFlowExercises {
                 System.out.println("You got a F");
                 break;
             default:
-                System.out.println("You cheater. Caught you red-handed.");
+                System.out.println("You cheated.");
         }
 
     }

@@ -1,31 +1,33 @@
 import java.util.Scanner;
 import java.util.Random;
 public class MethodsExercises {
+    static  Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-//        addition(5,5);
-//        subtraction(15,5);
-//        multiplication(5,5);
+//        System.out.print(addition(5,5));
+//        System.out.print(subtraction(15,5));
+//        System.out.print(multiplication(5,5) == 25);
 //        division(10,5);
 //        modulus(50,2);
-        getInteger(1, 10);
-        factorial();
-        diceRoll();
-        diceRollAgain();
 
+        System.out.print("Enter a number between 1 and 10: \n");
+//        System.out.println(getInteger(1, 10));
+
+        factorial();
+//        diceRoll();
     }
 
     //    1
 
-    public static void addition(int a, int b) {
-        System.out.println(a + b);
+    public static double addition(double num, double num2) {
+        return num + num2;
     }
 
-    public static void subtraction(int a, int b) {
-        System.out.println(a - b);
+    public static double subtraction(double num, double num2) {
+        return num - num2;
     }
 
-    public static void multiplication(int a, int b) {
-        System.out.println(a * b);
+    public static double multiplication(double num , double num2) {
+        return num * num2;
     }
 
     public static void division(int a, int b) {
@@ -39,15 +41,15 @@ public class MethodsExercises {
     //    2
 
     public static int getInteger(int min, int max) {
-        System.out.print("Enter a number between 1 and 10: \n");
-        Scanner scanner = new Scanner(System.in);
+
         int userInput = Integer.parseInt(scanner.nextLine());
         if (userInput >= min && userInput <= max) {
             System.out.println("Valid\n");
         } else {
             System.out.println("Invalid\n");
+            return getInteger(min, max);
         }
-        return 0;
+        return userInput;
     }
 
     //    3
@@ -65,37 +67,27 @@ public class MethodsExercises {
 
     //    4
 
-    public static String diceRoll() {
-        char diceRoll;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How many sides are on the pair of dice?\n");
-        int sidesNumber = scanner.nextInt();
-        System.out.println("Great, there are " + sidesNumber + " sides to your dice!\n");
-        System.out.println();
-        System.out.println("Let's get to rollin!!\n");
-        System.out.println("Enter anything to roll the dice\n");
-        diceRoll = scanner.next().charAt(0);
-        do {
-            System.out.println("Rolling the dice...\n");
-            double randNumber1 = Math.random() * sidesNumber + 1;
-            double randNumber2 = Math.random() * sidesNumber + 1;
-            long randNumRounded1 = Math.round(Math.floor(randNumber1));
-            long randNumRounded2 = Math.round(Math.floor(randNumber2));
-            System.out.printf("The dice numbers are " + randNumRounded1 + " and " + randNumRounded2 + "!\n");
-        } while (diceRoll == 'q');
-        System.out.println();
-        return "great job";
-    }
-
-    public static String diceRollAgain(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Would you lIke to roll the dice again? yes or no?\n");
-        String rollAgain = scanner.next();
-        if (rollAgain.equalsIgnoreCase("yes")){
-            diceRoll();
-        } else {
-            System.out.print("Thanks for playing!");
-        }
-        return "great job";
-    }
+//    public static String diceRoll() {
+//        char diceRoll;
+//        System.out.print("Welcome to the dice game!\n");
+//        System.out.println("How many sides are on the pair of dice?\n");
+//        int sidesNumber = scanner.nextInt();
+//        System.out.println("Great, there are " + sidesNumber + " sides to your dice!\n");
+//        System.out.println();
+//        System.out.println("press any letter and the return key to roll the dice\n");
+//        diceRoll = scanner.next().charAt(0);
+//        String diceRollAgain = "Yes";
+//        do {
+//            System.out.println("Rolling the dice...\n");
+//            double randNumber1 = Math.random() * sidesNumber + 1;
+//            double randNumber2 = Math.random() * sidesNumber + 1;
+//            long randNumRounded1 = Math.round(Math.floor(randNumber1));
+//            long randNumRounded2 = Math.round(Math.floor(randNumber2));
+//            System.out.printf("You rolled a " + randNumRounded1 + " and a " + randNumRounded2 + "!\n");
+//            System.out.print("Would you lIke to roll the dice again? yes or no?\n");
+//            diceRollAgain = scanner.next();
+//        } while (diceRollAgain.equalsIgnoreCase("yes"));
+//        System.out.println("Thanks for playing!");
+//        return "Nope";
+//    }
 }

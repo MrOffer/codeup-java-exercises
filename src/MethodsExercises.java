@@ -1,93 +1,124 @@
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
+
 public class MethodsExercises {
-    static  Scanner scanner = new Scanner(System.in);
+
+    static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
-//        System.out.print(addition(5,5));
-//        System.out.print(subtraction(15,5));
-//        System.out.print(multiplication(5,5) == 25);
-//        division(10,5);
-//        modulus(50,2);
 
-        System.out.print("Enter a number between 1 and 10: \n");
-//        System.out.println(getInteger(1, 10));
+        boolean start = true;
 
-        factorial();
-//        diceRoll();
+        System.out.println("sum(1,2) = " + sum(1, 2));
+//        System.out.println(sum(1,2) == 3);
+//        System.out.println(sum(-1,2) == 1);
+        System.out.println("sub(1,2) = " + sub(1, 2));
+        System.out.println("multiply(3,2) = " + multiply(3, 2));
+        System.out.println("division(5,2) = " + division(5, 2));
+        System.out.println("modulus(5,2) = " + modulus(5, 2));
+
+        System.out.print("Enter a number between 1 and 10: ");
+        System.out.println("userInput = " + getInteger(1, 10));
+
+        while(start){
+            System.out.println("calculateFactorial() = " + calculateFactorial());
+            System.out.println("Would you like to continue? (y/n)");
+            start = scan.nextLine().equalsIgnoreCase("y");
+        }
+
+        do {
+            System.out.println("Give me the number of sides");
+            rollDices(getInteger(1,100));
+            System.out.println("Would you like to continue? (y/n)");
+        } while (scan.nextLine().equalsIgnoreCase("y"));
+
+        do {
+            Random random = new Random();
+            int winningNumber = random.nextInt(100) + 1;
+
+            System.out.println("Give me a number to guess");
+            guessGame( getInteger(1,100), winningNumber);
+            System.out.println("Would you like to continue? (y/n)");
+        } while (scan.nextLine().equalsIgnoreCase("y"));
+
     }
 
-    //    1
-
-    public static double addition(double num, double num2) {
+    public static double sum(double num, double num2){
         return num + num2;
     }
 
-    public static double subtraction(double num, double num2) {
+    public static double sub(double num, double num2){
         return num - num2;
     }
 
-    public static double multiplication(double num , double num2) {
+    public static double multiply(double num, double num2){
         return num * num2;
     }
 
-    public static void division(int a, int b) {
-        System.out.println(a / b);
+    public static double division(double num, double num2){
+        return num / num2;
     }
 
-    public static void modulus(int a, int b) {
-        System.out.println(a % b);
+    public static double modulus(double num, double num2){
+        return num % num2;
     }
 
-    //    2
+    public static int getInteger(int min, int max){
+        int input = Integer.parseInt(scan.nextLine());
 
-    public static int getInteger(int min, int max) {
-
-        int userInput = Integer.parseInt(scanner.nextLine());
-        if (userInput >= min && userInput <= max) {
-            System.out.println("Valid\n");
-        } else {
-            System.out.println("Invalid\n");
+        if(input < min){
+            System.out.println("The number is lower than the min, try again: ");
+            return getInteger(min, max);
+        } else if(input > max) {
+            System.out.println("The number is higher than the max, try again: ");
             return getInteger(min, max);
         }
-        return userInput;
+
+        return input;
     }
 
-    //    3
 
-    public static void factorial() {
-        int number = getInteger(1, 10);
-        String output = "";
-        int total = 1;
-        for (int i = 1; i <= number; i++) {
-            total *= i;
-            output += i + "! = " + (total) + "\n";
+    public static long calculateFactorial(){
+
+        System.out.print("Enter a number between 1 and 10: ");
+        int number = getInteger(1,10);
+        // 4
+        long output = 1;
+
+        for (int counter = 1; counter <= number ; counter++){
+            output *= counter;
         }
-        System.out.println(output);
+
+        return output;
     }
 
-    //    4
 
-//    public static String diceRoll() {
-//        char diceRoll;
-//        System.out.print("Welcome to the dice game!\n");
-//        System.out.println("How many sides are on the pair of dice?\n");
-//        int sidesNumber = scanner.nextInt();
-//        System.out.println("Great, there are " + sidesNumber + " sides to your dice!\n");
-//        System.out.println();
-//        System.out.println("press any letter and the return key to roll the dice\n");
-//        diceRoll = scanner.next().charAt(0);
-//        String diceRollAgain = "Yes";
-//        do {
-//            System.out.println("Rolling the dice...\n");
-//            double randNumber1 = Math.random() * sidesNumber + 1;
-//            double randNumber2 = Math.random() * sidesNumber + 1;
-//            long randNumRounded1 = Math.round(Math.floor(randNumber1));
-//            long randNumRounded2 = Math.round(Math.floor(randNumber2));
-//            System.out.printf("You rolled a " + randNumRounded1 + " and a " + randNumRounded2 + "!\n");
-//            System.out.print("Would you lIke to roll the dice again? yes or no?\n");
-//            diceRollAgain = scanner.next();
-//        } while (diceRollAgain.equalsIgnoreCase("yes"));
-//        System.out.println("Thanks for playing!");
-//        return "Nope";
-//    }
+    public static void rollDices(int sides){
+        // Create an instance of the Random class
+        Random random = new Random();
+        int random1 = random.nextInt(sides) + 1;
+        int random2 = random.nextInt(sides) + 1;
+
+        System.out.println("random1 = " + random1);
+        System.out.println("random2 = " + random2);
+
+    }
+
+    public static void guessGame(int firstGuess, int winningNumber) {
+
+        System.out.println("winningNumber = " + winningNumber);
+
+        if(firstGuess == winningNumber){
+            System.out.println("You won");
+        } else if (firstGuess < winningNumber ){
+            System.out.println("Go higher, try again: ");
+            guessGame(getInteger(1, 100), winningNumber);
+        } else {
+            System.out.println("Go Lower, try again: ");
+            guessGame(getInteger(1, 100), winningNumber);
+        }
+
+    }
+
+
 }

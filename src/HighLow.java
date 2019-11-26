@@ -3,8 +3,7 @@ import java.util.Scanner;
 
 public class HighLow {
 
-   import java.util.Random;
-import java.util.Scanner;
+
 
         static Scanner scan = new Scanner(System.in);
 

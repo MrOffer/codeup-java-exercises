@@ -43,12 +43,12 @@ public class consolegame {
             } else if (doorOrMirror.equalsIgnoreCase("mirror")) {
                 System.out.print("You chose to go to th mirror!\nYou look in the mirror and you see your reflection, the reflection fades away into just glass and you see a clown on ther other side\n ");
                 System.out.print("    >>>>>\\|/<<<<<\n  >>>\\\\\\\\\\v/////<<<\n >>>\\\\\\\\\\vvv/////<<<\n  >>>(vvvvvvvvv)<<<\n  >>>(vvvvvvvvv)<<<\n >>>>) (.)_(.) (<<<<\n >>>/    (_)    \\<<<\n   ( ()_     _() )\n    \\   `---'   /\n    \"'--._.--'\" \"\n");
-                System.out.print("The clown laughs and says 'I'm Jigsaw, and I am gld you decided to play!\nA yellow mist starts coming form a vent in the ceiling and you pass out!\n");
+                System.out.print("The clown laughs and says 'I'm Jigsaw, and I am glad you decided to play!\nA yellow mist starts coming form a vent in the ceiling and you pass out!\n");
                 userHealth -= attack;
                 System.out.print("You were dealt " + attack + " damage by the mist, you now have " + userHealth + " pts worth of health!\n");
             }
 
-            System.out.println("Enemy's Health = "+ badGuyHealth);
+            System.out.println("Jigsaw's Health = "+ badGuyHealth);
             System.out.println(userName + "’s health = "+ userHealth);
 
 
@@ -60,16 +60,16 @@ public class consolegame {
                     System.out.println("The glass shatters and you are now face to face with Jigsaw!");
                     userHealth-=attack;
                     System.out.println(userName + "’s health = " + userHealth+"\n");
-                    System.out.println("bad guy has " + badGuyHealth + " health\n");
+                    System.out.println("Jigsaw has " + badGuyHealth + " health\n");
                 } else if (userinput == 2){
                     System.out.println("You kick the glass and it shatters, you are now face to face with Jigsaw!\n");
                     System.out.println(userName + "’s health = " + userHealth+"\n");
-                    System.out.println("bad guy has " + badGuyHealth + " health\n");
+                    System.out.println("Jigsaw has " + badGuyHealth + " health\n");
                 } else {
                     System.out.println("You pressed the wrong key and lost "+attack+" health\n");
                     System.out.println("The glass shatters and you are now face to face with Jigsaw!");
                     System.out.println(userName + "’s health = " + userHealth+"\n");
-                    System.out.println("bad guy has " + badGuyHealth + " health\n");
+                    System.out.println("Jigsaw has " + badGuyHealth + " health\n");
                 }
 
                 int numberRandom = rando.nextInt(2);
@@ -78,10 +78,10 @@ public class consolegame {
                 if (coinFlip1 == numberRandom & userHealth > 0 & badGuyHealth > 0){
                     System.out.println("Great shot! Your attack does " + attack + " damage\n");
                     badGuyHealth -= attack;
-                    System.out.println("bad guy has " + badGuyHealth + " health\n");
+                    System.out.println("Jigsaw has " + badGuyHealth + " health\n");
                 } else {
                     System.out.println("you missed!\n");
-                    System.out.println("Enemy attacks and does " + attack + " damage");
+                    System.out.println("Jigsaw attacks and does " + attack + " damage");
                     userHealth -= attack;
                     System.out.println(userName + "’s health= " + userHealth);
                 }

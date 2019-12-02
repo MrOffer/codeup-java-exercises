@@ -10,8 +10,8 @@ public class ServerNameGenerator {
             return adjectives[randomAdj];
         }
         public static String randomNoun(){
-            int randomN = (int)Math.floor(Math.random() * nouns.length);
-            return nouns[randomN];
+            int randomNou = (int)Math.floor(Math.random() * nouns.length);
+            return nouns[randomNou];
         }
 
         public static void main(String[] args) {

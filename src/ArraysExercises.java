@@ -18,8 +18,8 @@ public class ArraysExercises {
         System.out.println(Arrays.toString(addPerson(People, "George")));
     }
     public static String[] addPerson (String[]People, String Person) {
-        String[] People2 = Arrays.copyOf(People, 4);
-        People2[3] = Person;
+        String[] People2 = Arrays.copyOf(People, People.length+1);
+        People2[People.length-1] = Person;
         return People2;
     }
 

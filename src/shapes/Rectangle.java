@@ -5,24 +5,16 @@ public class Rectangle {
     protected int width;
 
     public Rectangle(int Length, int Width){
-        length = Length;
-        width = Width;
-    }
-
-    public int getLength(){
-        return length;
-    }
-
-    public int getWidth(){
-        return width;
+        this.length = Length;
+        this.width = Width;
     }
 
     public int getArea(){
-      return length * width;
+        return this.length * this.width;
     }
 
     public int getPerimeter(){
-        return 2 * length + 2 * width;
+        return 2 * this.length + 2 * this.width;
     }
 
 }

@@ -1,8 +1,6 @@
 package movies;
 
 import util.Input;
-
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,7 +21,7 @@ public class MoviesApplication {
                     "3 - view movies in the drama category\n" +
                     "4 - view movies in the horror category\n" +
                     "5 - view movies in the sci-fi category\n" +
-                    "6 - Add a movie to the list\n"+
+                    "6 - Add a movie to the list\n" +
                     "\n"+ "Please enter your choice: ");
 
             int userInput = input.getInt(0, 6);
@@ -70,7 +68,7 @@ public class MoviesApplication {
                     String name = scan.nextLine();
                     System.out.println("What is the category?\n");
                     String category = scan.nextLine();
-
+//                    String Movie = new String Movie (name, category);
                 default:
                     System.err.println("That's not an option...");
             }

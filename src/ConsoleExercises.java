@@ -60,4 +60,11 @@ public class ConsoleExercises {
 
 
     }
+
+    public static class student {
+        protected String firstName;
+        protected String lastName;
+
+
+    }
 }

@@ -16,7 +16,7 @@ public class Input {
 
     public boolean yesNo(){
         String input = getString("Type yes/no: ");
-        return input.equals("yes") || input.equals("y");
+        return input.equalsIgnoreCase("yes") || input.equalsIgnoreCase("y");
     }
 
     public int getInt(int min, int max){
